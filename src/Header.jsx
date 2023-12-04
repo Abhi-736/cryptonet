@@ -10,7 +10,7 @@ const Header = (props) => {
       props.handleChange(e.target.value);
       setErr(false);
     }
-  };
+  };//checks if the user input is a number or not and then returning it , if not then it will show a red border 
 
   return (
     <div className=" header flex z-10 fixed h-auto gap-3 justify-center ">

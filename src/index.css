@@ -8,7 +8,7 @@
    padding-top:8px;
    z-index: 1;
    padding-bottom:5px;
-   background-color:#008000b3 ; /*  width:'100%',paddingTop:'8px',zIndex:'1',paddingBottom:'5px', backgroundColor:'rgba(0,128,0,0.7) */
+   background-color:#008000b3 ; 
 }
 .header h2{
     font-size:25px;

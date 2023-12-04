@@ -7,7 +7,7 @@ function App() {
   const [cardDetail, setcardDetail] = useState([]);
   const [candidateNumber, setcandidateNumber] = useState();
   const [Loading, setLoading] = useState(true);
-  const [blackWhite, setblackWhite] = useState(false);
+
 
   useEffect(() => {
     const res = fetch(
@@ -20,11 +20,11 @@ function App() {
         setcardDetail(value.results);
         setLoading(false);
       });
-  }, [candidateNumber]);
+  }, [candidateNumber]);//will execute and fetch every time the user enter a number (will not execute if it is not a number)
 
   const handleChange = (number) => {
     setcandidateNumber(number);
-  };
+  };//function that dynamically change the the number of candidates on every user input 
 
   return (
     <main
@@ -40,20 +40,14 @@ function App() {
           (cardDetail.map((card) =>
             (
               <article key={card.name}
-                onMouseEnter={() => {
-                  setblackWhite((value) => !value);
-                }}
-                onMouseLeave={() => {
-                  setblackWhite((value) => !value);
-                }}
+              
                 className=" flex h-auto font-sens font-normal hover:scale-95 hover:bg-[#008000b3] hover:shadow-[5px_5px_0px_1px_rgba(255,255,255,0.6)] hover:text-white transition cursor-pointer text-md bg-[#fdc448] rounded-lg shadow-xl"
               >
                 <section className="flex justify-center  p-3 items-center hover:scale-120 transition duration-300 ease-in-out">
                   <div className="overflow-hidden">
                     {" "}
                     <img
-                      className={`hover:${
-                        blackWhite ?"grayscale-[100%]" : "grayscale-[20%]"}  transition duration-200 ease-in-out`}
+                      className={ `transition duration-200 ease-in-out`}
                       src={card.picture.large}
                       alt={card.name.first}
                     />
